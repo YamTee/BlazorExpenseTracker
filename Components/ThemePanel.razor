@@ -1,0 +1,40 @@
+﻿@using BlazorExpenseTracker.Models;
+
+@implements IDialogContentComponent<ThemePanelParams>
+
+<FluentDesignTheme @bind-Mode="@_mode"
+                   @bind-OfficeColor="@_officeColor"
+                   OnLoaded="@OnLoaded"
+                   OnLuminanceChanged="@OnLuminanceChanged"
+                   StorageName="theme" />
+
+<div style="min-height: 250px;">
+
+    <FluentGrid>
+        <FluentGridItem>
+            <FluentSelect Label="Theme"
+                          Width="250px"
+                          Items="@(Enum.GetValues<DesignThemeModes>())"
+                          @bind-SelectedOption="@_mode" />
+        </FluentGridItem>
+
+        <FluentGridItem>
+            <FluentSelect Label="Color"
+                          Items="@(Enum.GetValues<OfficeColor>().Select(i => (OfficeColor?)i))"
+                          Height="200px"
+                          Width="250px"
+                          @bind-SelectedOption="@_officeColor">
+                <OptionTemplate>
+                    <FluentStack>
+                        <FluentIcon Value="@(new Icons.Filled.Size20.RectangleLandscape())"
+                                    Color="Color.Custom"
+                                    CustomColor="@(@context.ToAttributeValue() != "default" ? context.ToAttributeValue() : "#036ac4" )" />
+                        <FluentLabel>@context</FluentLabel>
+                    </FluentStack>
+                </OptionTemplate>
+            </FluentSelect>
+            @* <FluentButton Appearance="Appearance.Accent" OnClick="PickRandomColor">Feeling lucky?</FluentButton> *@
+        </FluentGridItem>
+    </FluentGrid>
+</div>
+

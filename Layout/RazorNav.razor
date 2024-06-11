@@ -1,0 +1,60 @@
+﻿@inject IDialogService DialogService;
+
+@using BlazorExpenseTracker.Models;
+@using BlazorExpenseTracker.Components;
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid" >
+        <Logo></Logo>
+@*         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> *@
+
+        <span class="navbar-text">
+                <FluentButton OnClick="OpenPanelRightAsync" Appearance="Appearance.Neutral">
+                    @* <FluentIcon Value="@(new Icons.Regular.Size20.Settings())" /> *@ Settings
+                </FluentButton>
+            </span>
+    </div>
+</nav>
+
+@code {
+
+    private IDialogReference? _dialog;
+
+    public DesignThemeModes Mode { get; set; }
+
+    public OfficeColor? OfficeColor { get; set; }
+
+    private async Task OpenPanelRightAsync()
+    {
+        var themeParams = new ThemePanelParams
+            {
+                Mode = Mode,
+                OfficeColor = OfficeColor
+            };
+
+        var dialogParameters = new DialogParameters();
+
+        _dialog = await DialogService.ShowPanelAsync<ThemePanel>(themeParams, dialogParameters);
+
+        DialogResult result = await _dialog.Result;
+
+        HandlePanel(result);
+    }
+
+    private static void HandlePanel(DialogResult result)
+    {
+        if (result.Cancelled)
+        {
+            return;
+        }
+
+        if (result.Data is not null)
+        {
+            return;
+        }
+    }
+
+}
