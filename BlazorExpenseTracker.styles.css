@@ -1,5 +1,35 @@
 @import '_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.bundle.scp.css';
 
+/* /Components/BottomBar.razor.rz.scp.css */
+#bottom-bar[b-647eany7vi] {
+    width: 100%;
+    background-color: var(--neutral-layer-3) !important;
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+}
+
+.bottom-bar-element[b-647eany7vi] {
+    width: 25%;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    color: var(--accent-fill-rest);
+    cursor: pointer;
+    fill: var(--accent-fill-rest);
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+}
+
+    .bottom-bar-element:hover[b-647eany7vi] {
+        opacity: 1 !important;
+    }
+
+#bottom-bar:hover .bottom-bar-element[b-647eany7vi] {
+    opacity: 0.33;
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+}
 /* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-sajnsww4id] {
     position: relative;
@@ -166,10 +196,9 @@ main[b-sajnsww4id] {
 .navbar[b-xp9rizaubd] {
     background-color: var(--neutral-layer-3) !important;
     color: #ffffff !important;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    position: fixed;
+    top: 0;
     height: 60px;
-    right: 0px;
+    width:100%;
     overflow: hidden;
 }
