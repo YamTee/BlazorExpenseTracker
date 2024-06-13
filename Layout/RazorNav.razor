@@ -6,16 +6,16 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <Logo Width="250" ApplyThemeColor="true"></Logo>
-        @*         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button> *@
+
+        <Logo Width="200" ApplyThemeColor="true"></Logo>
 
         <span class="navbar-text">
-            <FluentButton OnClick="OpenPanelRightAsync" Appearance="Appearance.Neutral">
-                @* <FluentIcon Value="@(new Icons.Regular.Size20.Settings())" /> *@ Settings
+            <FluentButton IconStart="@(new Icons.Regular.Size20.Settings())"
+                          OnClick="OpenPanelRightAsync"
+                          Appearance="Appearance.Neutral">
             </FluentButton>
         </span>
+
     </div>
 </nav>
 
@@ -56,5 +56,4 @@
             return;
         }
     }
-
 }
