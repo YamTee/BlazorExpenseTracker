@@ -1,9 +1,0 @@
-﻿.navbar {
-    background-color: var(--neutral-layer-3) !important;
-    color: #ffffff !important;
-    position: fixed;
-    top: 0;
-    height: 60px;
-    width:100%;
-    overflow: hidden;
-}

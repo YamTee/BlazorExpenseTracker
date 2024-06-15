@@ -4,6 +4,7 @@
     position: fixed;
     bottom: 0;
     height: 80px;
+    border-top: calc(var(--stroke-width) * 2px) solid var(--accent-fill-rest);
 }
 
 .bottom-bar-element {
@@ -17,6 +18,7 @@
     cursor: pointer;
     fill: var(--accent-fill-rest);
     transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+    text-decoration: auto !important;
 }
 
     .bottom-bar-element:hover {
