@@ -1,23 +1,19 @@
 ﻿@inject IDialogService DialogService;
 
-@using BlazorExpenseTracker.Models;
-@using BlazorExpenseTracker.Components;
 
+<FluentHeader Class="siteheader">
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
+    <!-- Logo -->
+    <Logo Width="200" ApplyThemeColor="true"></Logo>
 
-        <Logo Width="200" ApplyThemeColor="true"></Logo>
+    <FluentSpacer />
 
-        <span class="navbar-text">
-            <FluentButton IconStart="@(new Icons.Regular.Size20.Settings())"
-                          OnClick="OpenPanelRightAsync"
-                          Appearance="Appearance.Neutral">
-            </FluentButton>
-        </span>
+    <FluentButton IconStart="@(new Icons.Regular.Size20.Settings())"
+                  OnClick="OpenPanelRightAsync"
+                  Appearance="Appearance.Neutral">
+    </FluentButton>
 
-    </div>
-</nav>
+</FluentHeader>
 
 @code {
 
@@ -37,7 +33,10 @@
 
         var dialogParameters = new DialogParameters();
 
-        _dialog = await DialogService.ShowPanelAsync<ThemePanel>(themeParams, dialogParameters);
+        _dialog = await DialogService
+                    .ShowPanelAsync<ThemePanel>(
+                        data: themeParams,
+                        parameters: dialogParameters);
 
         DialogResult result = await _dialog.Result;
 
