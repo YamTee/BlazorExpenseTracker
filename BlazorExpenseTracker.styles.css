@@ -65,6 +65,7 @@
     bottom: 2rem;
     padding: 1rem 1.5rem;
     animation: fadein-b-lqozsnjnov 2s ease-out;
+    z-index: 9999999999999;
 }
 
 @keyframes fadein-b-lqozsnjnov {

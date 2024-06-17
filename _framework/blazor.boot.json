@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BlazorExpenseTracker",
   "resources": {
-    "hash": "sha256-Fln/GU/dzz86Nz+TTwRR9NTd0kjyd8yDjQzJz9mcIME=",
+    "hash": "sha256-PpoSVwtkE1saHS9ipQ15ZMAumjmGiNPqJ16AkzKnkOQ=",
     "jsModuleNative": {
       "dotnet.native.8.0.6.suuomc2hr0.js": "sha256-YU6M9+jtDVnB8/wtrgIndOstzNh778Ls8g9XnbjorSk="
     },
@@ -18,7 +18,7 @@
     },
     "assembly": {
       "Blazored.LocalStorage.wasm": "sha256-OaMAAd5n7ORfyur5e3QIyEVKJ76MKIvwbg7/icnnYcU=",
-      "BlazorExpenseTracker.wasm": "sha256-zI+ApL9mKnhsFfB0QCbqwFuVY5IGJbY0z004iGJeuzo=",
+      "BlazorExpenseTracker.wasm": "sha256-FqaNyKbtA+vwir3UQRCgMpTttx5KAg9SmKA4rwZnaP8=",
       "Microsoft.AspNetCore.Components.Authorization.wasm": "sha256-9rPpLL4SSoY2VpqyYrVACMNMvuyNNYLctLwWvJd3QL8=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-Fnv8KD4eVNUNwaV5ff9dpAAvWoJOEBID6BRoVU+xTxY=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-MSYWoRLeIgseJs7u7BT7228fE3a9LU0IkvlXmg4xwSA=",

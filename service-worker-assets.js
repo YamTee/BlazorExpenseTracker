@@ -45,7 +45,7 @@
       "url": "sw-registrator.js"
     },
     {
-      "hash": "sha256-RLsI2yGJw5l+wzsq+4oDP\/Z5Ij0gNYDuwDHt8KQDWPc=",
+      "hash": "sha256-VoGxlRcgddv3VxUPEcXf9l31x9+vfG749pUoolDgXD4=",
       "url": "BlazorExpenseTracker.styles.css"
     },
     {
@@ -81,7 +81,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-IwHhmnasOzjrVvaJ35m8pFqkVx5PtrcjjowQHpJKpw0=",
+      "hash": "sha256-9NlisXb0fq6MziRPo7CQFMNObjgzrPHHqC7WGpZC3iw=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -89,7 +89,7 @@
       "url": "_framework\/Blazored.LocalStorage.wasm"
     },
     {
-      "hash": "sha256-zI+ApL9mKnhsFfB0QCbqwFuVY5IGJbY0z004iGJeuzo=",
+      "hash": "sha256-FqaNyKbtA+vwir3UQRCgMpTttx5KAg9SmKA4rwZnaP8=",
       "url": "_framework\/BlazorExpenseTracker.wasm"
     },
     {
@@ -413,5 +413,5 @@
       "url": "_content\/Microsoft.FluentUI.AspNetCore.Components\/Microsoft.FluentUI.AspNetCore.Components.lib.module.js"
     }
   ],
-  "version": "O9CfPaZa"
+  "version": "j9\/XKwr9"
 };
