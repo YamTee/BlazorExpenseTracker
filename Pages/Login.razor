@@ -1,5 +1,9 @@
 ﻿@page "/login"
 
+@inject ILocalStorageService _localStorage
+@inject IMessageService _messageService
+@inject NavigationManager _navigation
+
 @layout UnAuthorizedLayout
 
 <FluentStack Style="height:100%; width:100%"
@@ -13,6 +17,8 @@
                        Size="TextSize.H5">
             Login
         </PageSeparator>
+
+        <FluentMessageBarProvider Class="mb-3" Section="LOGIN_MESSAGES" />
 
         <FluentTextField style="width: 100%;"
                          Class="mb-3"
@@ -32,7 +38,7 @@
                          Label="Password">
         </FluentTextField>
 
-        <FluentButton width="100%" Appearance="Appearance.Accent">Login</FluentButton>
+        <FluentButton OnClick=LoginSystem width="100%" Appearance="Appearance.Accent">Login</FluentButton>
 
     </FluentCard>
 
@@ -44,6 +50,41 @@
     public string? Email { get; set; }
     public string? Password { get; set; }
 
+    private async Task LoginSystem()
+    {
+        _messageService.Clear();
 
+        if (ValidateApiKey())
+        {
+            await SaveApiKey();
 
+            _navigation.NavigateTo("/");
+        }
+
+        var message = $"Please provide a valid API Key!";
+
+        await _messageService.ShowMessageBarAsync(
+            message,
+            MessageIntent.Error,
+            "LOGIN_MESSAGES");
+    }
+
+    private async Task SaveApiKey()
+    {
+        await _localStorage.SetItemAsync<string>(
+             LocalStorageKey.ApiKey.GetDescription()!,
+         ApiKey!);
+    }
+
+    private bool ValidateApiKey()
+    {
+        if (string.IsNullOrEmpty(ApiKey)) return false;
+
+        return true;
+    }
+
+    private void ClearMessage()
+    {
+        _messageService.Clear();
+    }
 }

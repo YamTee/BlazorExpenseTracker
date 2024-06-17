@@ -1,1 +1,15 @@
 ﻿global using System.ComponentModel;
+global using Blazored.LocalStorage;
+global using BlazorExpenseTracker;
+global using BlazorExpenseTracker.Enumerations;
+global using Microsoft.AspNetCore.Components.Authorization;
+global using Microsoft.AspNetCore.Components;
+global using System.Security.Claims;
+global using System.Threading.Tasks;
+global using Microsoft.FluentUI.AspNetCore.Components.Extensions;
+global using BlazorExpenseTracker.AuthLogics;
+global using System.Net.Http;
+global using System.Threading;
+global using Microsoft.Extensions.Logging;
+global using BlazorExpenseTracker.Models;
+global using Microsoft.FluentUI.AspNetCore.Components;

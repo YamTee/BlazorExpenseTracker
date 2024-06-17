@@ -1,13 +1,15 @@
-using BlazorExpenseTracker.Models;
-using Microsoft.AspNetCore.Components;
-using Microsoft.FluentUI.AspNetCore.Components;
-
 namespace BlazorExpenseTracker.Components;
 
 public partial class ThemePanel
 {
     [Inject]
     private ILogger<ThemePanel> Logger { get; set; } = default!;
+
+    [Inject]
+    private ILocalStorageService LocalStorage { get; set; } = default!;
+
+    [Inject]
+    private NavigationManager Navigation { get; set; } = default!;
 
     [Parameter]
     public ThemePanelParams Content { get; set; } = default!;
@@ -33,5 +35,12 @@ public partial class ThemePanel
         Logger.LogInformation("Changed: {SystemTheme} {Theme}",
             (e.Mode == DesignThemeModes.System ? "System" : ""),
             (e.IsDark ? "Dark" : "Light"));
+    }
+
+    private async Task LogOutSystem()
+    {
+        await LocalStorage.RemoveItemAsync(LocalStorageKey.ApiKey.GetDescription()!);
+
+        Navigation.NavigateTo("/login");
     }
 }

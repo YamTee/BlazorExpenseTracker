@@ -1,4 +1,4 @@
-﻿namespace BlazorExpenseTracker.Models;
+﻿namespace BlazorExpenseTracker.Enumerations;
 
 public enum PageSeparatorTextAlignment
 {
