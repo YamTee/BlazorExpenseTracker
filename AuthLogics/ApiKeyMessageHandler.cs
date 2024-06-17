@@ -15,7 +15,7 @@ public class ApiKeyMessageHandler(
         {
             _logger.LogWarning("API key is missing!");
 
-            _navigation.NavigateTo("/login");
+            _navigation.NavigateTo("login");
         }
 
         request.Headers.Add("Authorization", $"Api-Key {apiKey}");

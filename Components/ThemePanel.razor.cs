@@ -41,6 +41,6 @@ public partial class ThemePanel
     {
         await LocalStorage.RemoveItemAsync(LocalStorageKey.ApiKey.GetDescription()!);
 
-        Navigation.NavigateTo("/login");
+        Navigation.NavigateTo("login");
     }
 }

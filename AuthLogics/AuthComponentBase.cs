@@ -14,7 +14,7 @@ public class AuthComponentBase : ComponentBase
 
         if (!(authState.User.Identity?.IsAuthenticated ?? true))
         {
-            Navigation.NavigateTo("/login");
+            Navigation.NavigateTo("login");
         }
     }
 }
