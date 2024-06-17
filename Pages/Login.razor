@@ -1,7 +1,49 @@
 ﻿@page "/login"
 
-<h3>Login</h3>
+@layout UnAuthorizedLayout
+
+<FluentStack Style="height:100%; width:100%"
+             Orientation="Orientation.Vertical"
+             VerticalAlignment="VerticalAlignment.Center"
+             HorizontalAlignment="HorizontalAlignment.Center">
+
+    <FluentCard Class="col-xl-6 col-sm-12 col-12">
+
+        <PageSeparator Alignment="PageSeparatorTextAlignment.Center"
+                       Size="TextSize.H5">
+            Login
+        </PageSeparator>
+
+        <FluentTextField style="width: 100%;"
+                         Class="mb-3"
+                         @bind-Value=ApiKey
+                         Label="API Key">
+        </FluentTextField>
+
+        <FluentTextField style="width: 100%;"
+                         Class="mb-3"
+                         @bind-Value=Email
+                         Label="Email">
+        </FluentTextField>
+
+        <FluentTextField style="width: 100%;"
+                         Class="mb-3"
+                         @bind-Value=Password
+                         Label="Password">
+        </FluentTextField>
+
+        <FluentButton width="100%" Appearance="Appearance.Accent">Login</FluentButton>
+
+    </FluentCard>
+
+</FluentStack>
 
 @code {
+
+    public string? ApiKey { get; set; }
+    public string? Email { get; set; }
+    public string? Password { get; set; }
+
+
 
 }

@@ -1,0 +1,25 @@
+﻿.page-separator {
+    overflow: hidden;
+    text-align: center;
+}
+
+    .page-separator::before,
+    .page-separator::after {
+        background-color: var(--neutral-foreground-rest);
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+
+    .page-separator::before {
+        right: 0.5em;
+        margin-left: -50%;
+    }
+
+    .page-separator::after {
+        left: 0.5em;
+        margin-right: -50%;
+    }

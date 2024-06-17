@@ -1,0 +1,19 @@
+﻿<div class="page-separator p-2 @Size.GetDescription() @Weight.GetDescription()">
+
+    @ChildContent
+
+</div>
+
+@code {
+    [Parameter]
+    public PageSeparatorTextAlignment Alignment { get; set; } = PageSeparatorTextAlignment.Center;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public TextSize Size { get; set; } = TextSize.H1;
+
+    [Parameter]
+    public TextWeight Weight { get; set; } = TextWeight.Default;
+}
