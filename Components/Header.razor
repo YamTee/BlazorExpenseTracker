@@ -19,16 +19,11 @@
 
     private IDialogReference? _dialog;
 
-    public DesignThemeModes Mode { get; set; }
-
-    public OfficeColor? OfficeColor { get; set; }
-
     private async Task OpenPanelRightAsync()
     {
         var themeParams = new ThemePanelParams
             {
-                Mode = Mode,
-                OfficeColor = OfficeColor
+                Name = "Name"
             };
 
         var dialogParameters = new DialogParameters();

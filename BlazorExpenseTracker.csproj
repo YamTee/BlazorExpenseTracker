@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\ComingSoon.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\ComingSoon.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazor-ApexCharts" Version="3.3.0" />
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.6" />

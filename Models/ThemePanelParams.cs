@@ -1,10 +1,6 @@
-﻿using Microsoft.FluentUI.AspNetCore.Components;
-
-namespace BlazorExpenseTracker.Models;
+﻿namespace BlazorExpenseTracker.Models;
 
 public class ThemePanelParams
 {
-    public DesignThemeModes Mode { get; set; }
-
-    public OfficeColor? OfficeColor { get; set; }
+    public string? Name { get; set; }
 }

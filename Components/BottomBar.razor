@@ -1,25 +1,25 @@
 ﻿@inject NavigationManager _navigation
 
 <div id="bottom-bar">
-    <a class="bottom-bar-element">
+    <a class="bottom-bar-element" onclick="@(() => _navigation.NavigateTo(""))">
         <span class="material-symbols-rounded">
             home
         </span><br>
         <span>Home</span>
     </a>
-    <a class="bottom-bar-element">
+    <a class="bottom-bar-element" onclick="@(() => _navigation.NavigateTo("coming-soon"))">
         <span class="material-symbols-rounded">
             pending
         </span><br>
         <span>Coming Soon</span>
     </a>
-    <a class="bottom-bar-element">
+    <a class="bottom-bar-element" onclick="@(() => _navigation.NavigateTo("coming-soon"))">
         <span class="material-symbols-rounded">
             pending
         </span><br>
         <span>Coming Soon</span>
     </a>
-    <a class="bottom-bar-element">
+    <a class="bottom-bar-element" onclick="@(() => _navigation.NavigateTo("coming-soon"))">
         <span class="material-symbols-rounded">
             pending
         </span><br>

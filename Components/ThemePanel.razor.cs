@@ -14,14 +14,9 @@ public partial class ThemePanel
     [Parameter]
     public ThemePanelParams Content { get; set; } = default!;
 
-    private DesignThemeModes _mode = default!;
-    private OfficeColor? _officeColor = default!;
+    public DesignThemeModes Mode { get; set; }
 
-    protected override void OnInitialized()
-    {
-        _mode = Content.Mode!;
-        _officeColor = Content.OfficeColor;
-    }
+    public OfficeColor? OfficeColor { get; set; }
 
     private void OnLoaded(LoadedEventArgs e)
     {

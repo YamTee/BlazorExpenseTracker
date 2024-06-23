@@ -2,8 +2,8 @@
 
 @implements IDialogContentComponent<ThemePanelParams>
 
-<FluentDesignTheme @bind-Mode="@_mode"
-                   @bind-OfficeColor="@_officeColor"
+<FluentDesignTheme @bind-Mode="@Mode"
+                   @bind-OfficeColor="@OfficeColor"
                    OnLoaded="@OnLoaded"
                    OnLuminanceChanged="@OnLuminanceChanged"
                    StorageName="theme" />
@@ -15,7 +15,8 @@
             <FluentSelect Label="Theme"
                           Width="250px"
                           Items="@(Enum.GetValues<DesignThemeModes>())"
-                          @bind-SelectedOption="@_mode" />
+                          @bind-SelectedOption="@Mode"
+                          />
         </FluentGridItem>
 
         <FluentGridItem>
@@ -23,11 +24,11 @@
                           Items="@(Enum.GetValues<OfficeColor>().Select(i => (OfficeColor?)i))"
                           Height="200px"
                           Width="250px"
-                          @bind-SelectedOption="@_officeColor">
+                          @bind-SelectedOption="@OfficeColor">
                 <OptionTemplate>
                     <FluentStack>
                         <FluentIcon Value="@(new Icons.Filled.Size20.RectangleLandscape())"
-                                    Color="Color.Custom"
+                                    Color="FluentColor.Custom"
                                     CustomColor="@(@context.ToAttributeValue() != "default" ? context.ToAttributeValue() : "#036ac4" )" />
                         <FluentLabel>@context</FluentLabel>
                     </FluentStack>
