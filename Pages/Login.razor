@@ -18,7 +18,7 @@
             Login
         </PageSeparator>
 
-        <FluentMessageBarProvider Class="mb-3" Section="LOGIN_MESSAGES" />
+        <FluentMessageBarProvider Class="mb-3" Section="LOGIN_MESSAGES" ClearAfterNavigation="true" />
 
         <FluentTextField style="width: 100%;"
                          Class="mb-3"
@@ -56,9 +56,13 @@
 
         if (ValidateApiKey())
         {
+            _messageService.Dispose();
+
             await SaveApiKey();
 
             _navigation.NavigateTo("");
+
+            return;
         }
 
         var message = $"Please provide a valid API Key!";

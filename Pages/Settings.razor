@@ -1,0 +1,62 @@
+﻿@page "/settings"
+
+@inherits AuthComponentBase
+
+<FluentDesignTheme @bind-Mode="@Mode"
+                   @bind-OfficeColor="@OfficeColor"
+                   OnLoaded="@OnLoaded"
+                   OnLuminanceChanged="@OnLuminanceChanged"
+                   StorageName="theme" />
+
+<FluentAccordion ActiveId="@activeId" OnAccordionItemChange="HandleOnAccordionItemChange">
+
+
+    <FluentAccordionItem Heading="Theme" >
+        <FluentIcon Value="@(new Icons.Regular.Size20.PaintBrushSparkle())" Color="@FluentColor.Neutral" Slot="start" />
+
+
+        <FluentGrid Class="p-3">
+            <FluentGridItem>
+                <FluentSelect Label="Theme"
+                              Width="250px"
+                              Items="@(Enum.GetValues<DesignThemeModes>())"
+                              @bind-SelectedOption="@Mode" />
+            </FluentGridItem>
+
+            <FluentGridItem>
+                <FluentSelect Label="Color"
+                              Items="@(Enum.GetValues<OfficeColor>().Select(i => (OfficeColor?)i))"
+                              Height="200px"
+                              Width="250px"
+                              @bind-SelectedOption="@OfficeColor">
+                    <OptionTemplate>
+                        <FluentStack>
+                            <FluentIcon Value="@(new Icons.Filled.Size20.RectangleLandscape())"
+                                        Color="FluentColor.Custom"
+                                        CustomColor="@(@context.ToAttributeValue() != "default" ? context.ToAttributeValue() : "#036ac4" )" />
+                            <FluentLabel>@context</FluentLabel>
+                        </FluentStack>
+                    </OptionTemplate>
+                </FluentSelect>
+            </FluentGridItem>
+        </FluentGrid>
+
+    </FluentAccordionItem>
+    @* <FluentAccordionItem Heading="Panel two">
+    <div slot="end">
+    #end#
+    </div>
+    Panel two content, using the 'end' slot for extra header content (in this case an HTML button)
+    </FluentAccordionItem>
+    <FluentAccordionItem Expanded="true" Heading="Panel three">
+    Panel three content
+    </FluentAccordionItem>
+    <FluentAccordionItem Expanded="true">
+    <HeadingTemplate>
+    Panel <span style="color:red">Four</span>
+    </HeadingTemplate>
+    <ChildContent>
+    Panel four content
+    </ChildContent>
+    </FluentAccordionItem> *@
+</FluentAccordion>

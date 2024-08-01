@@ -1,0 +1,27 @@
+﻿<FluentProfileMenu Initials="BG"
+                   Style="--fluent-profile-menu-hover: var(--neutral-stroke-focus); padding: 4px;">
+    <StartTemplate>
+        YamTee
+    </StartTemplate>
+
+    <HeaderTemplate>
+        <FluentPersona Name="Lydia Bauer"
+                       ImageSize="50px"
+                       Initials="LY">
+        </FluentPersona>
+    </HeaderTemplate>
+
+@*     <ChildContent>
+        <div style="width: 250px; height: 80px">
+            <FluentLabel Typo="@Typography.Header" Style="font-weight: bold;">Bill Gates</FluentLabel>
+            <FluentLabel>bill.gates@microsoft.com</FluentLabel>
+        </div>
+    </ChildContent> *@
+    <FooterTemplate>
+        <FluentStack>
+            <FluentButton>Settings</FluentButton>
+            <FluentSpacer />
+            <FluentButton>Logout</FluentButton>
+        </FluentStack>
+    </FooterTemplate>
+</FluentProfileMenu>

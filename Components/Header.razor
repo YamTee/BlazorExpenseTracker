@@ -8,6 +8,15 @@
 
     <FluentSpacer />
 
+    @if (IsAuthorized)
+    {
+        <FluentStack HorizontalAlignment="@HorizontalAlignment.End"
+                     VerticalAlignment="@VerticalAlignment.Center"
+                     Style="height: 48px; background: var(--neutral-layer-4); padding-inline-end: 10px; ">
+            <Profile />
+        </FluentStack>
+    }
+
     <FluentButton IconStart="@(new Icons.Regular.Size20.Settings())"
                   OnClick="OpenPanelRightAsync"
                   Appearance="Appearance.Neutral">
@@ -16,6 +25,8 @@
 </FluentHeader>
 
 @code {
+    [Parameter]
+    public bool IsAuthorized { get; set; } = false;
 
     private IDialogReference? _dialog;
 
