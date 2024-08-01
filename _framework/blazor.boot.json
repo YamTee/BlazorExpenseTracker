@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BlazorExpenseTracker",
   "resources": {
-    "hash": "sha256-R65eEJPxtJHHB5GykuHz74fIAou+DsbhIuiDyHoEK/Y=",
+    "hash": "sha256-ocuePpE4eFbACknGiqUyS+HqTkmH/OO5tFkwOws+Di4=",
     "jsModuleNative": {
       "dotnet.native.8.0.7.pvkr2na9g4.js": "sha256-tFsxPBbhkdn6GKNBKvCRLzrfAHdyM86odYTe0MtrwMk="
     },
@@ -19,7 +19,7 @@
     "assembly": {
       "Blazor-ApexCharts.wasm": "sha256-4mV9xovVFn4rxtiMOitQWW5ivJikWhYJr0+p/VThLA0=",
       "Blazored.LocalStorage.wasm": "sha256-OaMAAd5n7ORfyur5e3QIyEVKJ76MKIvwbg7/icnnYcU=",
-      "BlazorExpenseTracker.wasm": "sha256-rycyEDAOOkX++kua4Pu9eXxTBdjrVwm6AY2UIA3HYfo=",
+      "BlazorExpenseTracker.wasm": "sha256-7VZmS3XUp50fhwLZtEFYm+dFXV859iWuyEUrzdcJDaY=",
       "Microsoft.AspNetCore.Components.Authorization.wasm": "sha256-mTp07chEvC6IEdWWJt416/HYOeStspxfqejSrtV9KMw=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-od1aI+2rgtyJ3DGwzDpg+LIDW18JdqchO7verA+ress=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-qG4/13d3VIUECpr44M4GJDcPh8a+hsUimUhtzZcEj1I=",
