@@ -1,7 +1,4 @@
-﻿@inject IDialogService DialogService;
-
-
-<FluentHeader Class="siteheader">
+﻿<FluentHeader Class="siteheader" Style="color: var(--accent-fill-rest);">
 
     <!-- Logo -->
     <Logo Width="200" ApplyThemeColor="true"></Logo>
@@ -13,52 +10,18 @@
         <FluentStack HorizontalAlignment="@HorizontalAlignment.End"
                      VerticalAlignment="@VerticalAlignment.Center"
                      Style="height: 48px; background: var(--neutral-layer-4); padding-inline-end: 10px; ">
-            <Profile />
+
+            <Profile Name="YamTee"
+                     Email="yamtee.dev"
+                     Initials="Y">
+            </Profile>
+
         </FluentStack>
     }
-
-    <FluentButton IconStart="@(new Icons.Regular.Size20.Settings())"
-                  OnClick="OpenPanelRightAsync"
-                  Appearance="Appearance.Neutral">
-    </FluentButton>
 
 </FluentHeader>
 
 @code {
     [Parameter]
     public bool IsAuthorized { get; set; } = false;
-
-    private IDialogReference? _dialog;
-
-    private async Task OpenPanelRightAsync()
-    {
-        var themeParams = new ThemePanelParams
-            {
-                Name = "Name"
-            };
-
-        var dialogParameters = new DialogParameters();
-
-        _dialog = await DialogService
-                    .ShowPanelAsync<ThemePanel>(
-                        data: themeParams,
-                        parameters: dialogParameters);
-
-        DialogResult result = await _dialog.Result;
-
-        HandlePanel(result);
-    }
-
-    private static void HandlePanel(DialogResult result)
-    {
-        if (result.Cancelled)
-        {
-            return;
-        }
-
-        if (result.Data is not null)
-        {
-            return;
-        }
-    }
 }
