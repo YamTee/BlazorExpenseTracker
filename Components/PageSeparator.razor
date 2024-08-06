@@ -1,4 +1,4 @@
-﻿<div class="page-separator p-2 @Size.GetDescription() @Weight.GetDescription()">
+﻿<div class="page-separator p-2 @Size.GetDescription() @Weight.GetDescription() @Class">
 
     @ChildContent
 
@@ -16,4 +16,7 @@
 
     [Parameter]
     public TextWeight Weight { get; set; } = TextWeight.Default;
+
+    [Parameter]
+    public string? Class { get; set; } = string.Empty;
 }

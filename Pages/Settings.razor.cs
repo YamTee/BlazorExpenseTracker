@@ -1,4 +1,5 @@
-﻿namespace BlazorExpenseTracker.Pages;
+﻿
+namespace BlazorExpenseTracker.Pages;
 
 public partial class Settings
 {
@@ -21,6 +22,7 @@ public partial class Settings
     [Inject]
     private ILocalStorageService LocalStorage { get; set; } = default!;
 
+    #region Theme Settings
     public DesignThemeModes Mode { get; set; }
 
     public OfficeColor? OfficeColor { get; set; }
@@ -37,5 +39,29 @@ public partial class Settings
         Logger.LogInformation("Changed: {SystemTheme} {Theme}",
             e.Mode == DesignThemeModes.System ? "System" : "",
             e.IsDark ? "Dark" : "Light");
+    }
+    #endregion
+
+
+    public List<Categories>? Categories { get; set; } = [];
+
+    GridSort<Categories> sortByName = GridSort<Categories>
+        .ByAscending(p => p.Name)
+        .ThenAscending(p => p.Name);
+
+    GridSort<Categories> sortByDescription = GridSort<Categories>
+        .ByAscending(p => p.Description)
+        .ThenAscending(p => p.Description);
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(5000);
+
+        Categories = [
+            new(){ CategoryId = Guid.NewGuid().ToString(), Name = "Category 1", Description= "desc 1"},
+            new(){ CategoryId = Guid.NewGuid().ToString(), Name = "Category 2", Description= "desc 2"}
+        ];
+
+        await base.OnInitializedAsync();
     }
 }

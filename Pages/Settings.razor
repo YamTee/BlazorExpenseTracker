@@ -10,8 +10,10 @@
 
 <FluentAccordion ActiveId="@activeId" OnAccordionItemChange="HandleOnAccordionItemChange">
 
+    @* Theme Settings Accordion *@
+    <PageSeparator Size=TextSize.H6 Alignment="PageSeparatorTextAlignment.Right">Theme</PageSeparator>
 
-    <FluentAccordionItem Heading="Theme" >
+    <FluentAccordionItem Heading="Theme">
         <FluentIcon Value="@(new Icons.Regular.Size20.PaintBrushSparkle())" Color="@FluentColor.Neutral" Slot="start" />
 
 
@@ -41,7 +43,47 @@
             </FluentGridItem>
         </FluentGrid>
 
+
+
     </FluentAccordionItem>
+
+    @* Categories Accordion *@
+
+    <PageSeparator Size=TextSize.H6 Alignment="PageSeparatorTextAlignment.Right" Class="mt-3">Categories</PageSeparator>
+
+    <FluentAccordionItem Heading="Categories">
+        <FluentIcon Value="@(new Icons.Regular.Size20.PaintBrushSparkle())" Color="@FluentColor.Neutral" Slot="start" />
+
+        <FluentGrid Class="p-3">
+
+            <FluentGridItem xxl="12" sm="12" Style="align-items:end">
+                <FluentButton Appearance="Appearance.Accent">Add</FluentButton>
+            </FluentGridItem>
+
+            <FluentGridItem xxl="12" sm="12">
+                <FluentDataGrid Items="@Categories!.AsQueryable()">
+
+                    <TemplateColumn Title="Name" SortBy="@sortByName">
+                        @context.Name
+                    </TemplateColumn>
+
+                    <TemplateColumn Title="Description" SortBy="@sortByDescription">
+                        @context.Description
+                    </TemplateColumn>
+
+                    <TemplateColumn Title="Actions">
+                        <FluentButton Appearance="Appearance.Accent">Edit</FluentButton>
+                        <FluentButton Appearance="Appearance.Accent">Delete</FluentButton>
+                    </TemplateColumn>
+
+                </FluentDataGrid>
+            </FluentGridItem>
+
+        </FluentGrid>
+
+    </FluentAccordionItem>
+
+
     @* <FluentAccordionItem Heading="Panel two">
     <div slot="end">
     #end#
