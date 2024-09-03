@@ -45,6 +45,8 @@ public partial class Settings
 
     public List<Categories>? Categories { get; set; } = [];
 
+    public bool CategoriesLoaded { get; set; } = false;
+
     GridSort<Categories> sortByName = GridSort<Categories>
         .ByAscending(p => p.Name)
         .ThenAscending(p => p.Name);
@@ -55,12 +57,14 @@ public partial class Settings
 
     protected override async Task OnInitializedAsync()
     {
-        await Task.Delay(5000);
+        await Task.Delay(20000);
 
         Categories = [
             new(){ CategoryId = Guid.NewGuid().ToString(), Name = "Category 1", Description= "desc 1"},
             new(){ CategoryId = Guid.NewGuid().ToString(), Name = "Category 2", Description= "desc 2"}
         ];
+
+        CategoriesLoaded = true;
 
         await base.OnInitializedAsync();
     }

@@ -16,7 +16,6 @@
     <FluentAccordionItem Heading="Theme">
         <FluentIcon Value="@(new Icons.Regular.Size20.PaintBrushSparkle())" Color="@FluentColor.Neutral" Slot="start" />
 
-
         <FluentGrid Class="p-3">
             <FluentGridItem>
                 <FluentSelect Label="Theme"
@@ -44,7 +43,6 @@
         </FluentGrid>
 
 
-
     </FluentAccordionItem>
 
     @* Categories Accordion *@
@@ -54,32 +52,39 @@
     <FluentAccordionItem Heading="Categories">
         <FluentIcon Value="@(new Icons.Regular.Size20.PaintBrushSparkle())" Color="@FluentColor.Neutral" Slot="start" />
 
-        <FluentGrid Class="p-3">
+        @if (!CategoriesLoaded)
+        {
+            <Loader></Loader>
+        }
+        else
+        {
+            <FluentGrid Class="p-3">
 
-            <FluentGridItem xxl="12" sm="12" Style="align-items:end">
-                <FluentButton Appearance="Appearance.Accent">Add</FluentButton>
-            </FluentGridItem>
+                <FluentGridItem xxl="12" sm="12" Style="align-items:end">
+                    <FluentButton Appearance="Appearance.Accent">Add</FluentButton>
+                </FluentGridItem>
 
-            <FluentGridItem xxl="12" sm="12">
-                <FluentDataGrid Items="@Categories!.AsQueryable()">
+                <FluentGridItem xxl="12" sm="12">
+                    <FluentDataGrid Items="@Categories!.AsQueryable()">
 
-                    <TemplateColumn Title="Name" SortBy="@sortByName">
-                        @context.Name
-                    </TemplateColumn>
+                        <TemplateColumn Title="Name" SortBy="@sortByName">
+                            @context.Name
+                        </TemplateColumn>
 
-                    <TemplateColumn Title="Description" SortBy="@sortByDescription">
-                        @context.Description
-                    </TemplateColumn>
+                        <TemplateColumn Title="Description" SortBy="@sortByDescription">
+                            @context.Description
+                        </TemplateColumn>
 
-                    <TemplateColumn Title="Actions">
-                        <FluentButton Appearance="Appearance.Accent">Edit</FluentButton>
-                        <FluentButton Appearance="Appearance.Accent">Delete</FluentButton>
-                    </TemplateColumn>
+                        <TemplateColumn Title="Actions">
+                            <FluentButton Appearance="Appearance.Accent">Edit</FluentButton>
+                            <FluentButton Appearance="Appearance.Accent">Delete</FluentButton>
+                        </TemplateColumn>
 
-                </FluentDataGrid>
-            </FluentGridItem>
+                    </FluentDataGrid>
+                </FluentGridItem>
 
-        </FluentGrid>
+            </FluentGrid>
+        }
 
     </FluentAccordionItem>
 
